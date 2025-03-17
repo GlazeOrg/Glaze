@@ -1,0 +1,13 @@
+{
+  "name": "glaze",
+  "version-semver": "0.0.1",
+  "dependencies": [
+    "opencv4"
+  ],
+  "overrides": [
+    {
+      "name": "opencv4",
+      "version": "4.7.0"
+    }
+  ]
+}
