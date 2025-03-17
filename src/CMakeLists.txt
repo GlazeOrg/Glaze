@@ -2,7 +2,15 @@ add_executable(Glaze public/main.cpp private/main.h)
 # 添加头文件搜索路径
 include_directories(${PROJECT_SOURCE_DIR}/src/private)
 include_directories(${OpenCV_INCLUDE_DIRS})       
-link_directories(${OpenCV_LIB_DIR})              
+
+set(GLAZE_DLL ${OpenCV_INCLUDE_DIRS}/../debug/bin)
+
+link_directories(${OpenCV_INCLUDE_DIRS}/../debug/lib)    
+
+set_target_properties(Glaze PROPERTIES
+    VS_DEBUGGER_ENVIRONMENT PATH=${GLAZE_DLL}
+) 
+
 target_link_libraries(Glaze 
 PRIVATE
     opencv_stitching
